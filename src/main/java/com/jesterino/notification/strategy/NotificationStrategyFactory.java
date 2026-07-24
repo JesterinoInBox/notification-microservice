@@ -18,7 +18,10 @@ public class NotificationStrategyFactory {
         return strategies.stream()
                 .filter(s -> s.getType() == type)
                 .findFirst()
-                .orElseThrow();
-
+                .orElseThrow(() ->
+                        new IllegalArgumentException(
+                                "No strategy found for notification type: " + type
+                        )
+                );
     }
 }

@@ -25,6 +25,9 @@ public class TaskConsumer {
         log.info("Category: {}", event.category());
         log.info("Status: {}", event.status());
 
-        notificationService.send(NotificationType.TELEGRAM, "New task created");
+        notificationService.send(
+                event.category(),
+                "New task created"
+        );
     }
 }
