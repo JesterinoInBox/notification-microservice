@@ -14,3 +14,5 @@ spring:
 
       properties:
         spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.jesterino.notification.event.TaskCreatedEvent
+        spring.json.use.type.headers: false
