@@ -16,3 +16,13 @@ spring:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.jesterino.notification.event.TaskCreatedEvent
         spring.json.use.type.headers: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+  endpoint:
+    prometheus:
+      enabled: true
