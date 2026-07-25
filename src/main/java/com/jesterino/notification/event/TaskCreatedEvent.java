@@ -6,6 +6,7 @@ public record TaskCreatedEvent(
         Long id,
         String title,
         String user,
-        NotificationType category,
-        String status
+        String category,
+        String status,
+        NotificationType notificationType
 ) {}

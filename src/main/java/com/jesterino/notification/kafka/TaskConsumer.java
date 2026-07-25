@@ -2,7 +2,6 @@ package com.jesterino.notification.kafka;
 
 import com.jesterino.notification.event.TaskCreatedEvent;
 import com.jesterino.notification.service.NotificationService;
-import com.jesterino.notification.strategy.NotificationType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -26,8 +25,8 @@ public class TaskConsumer {
         log.info("Status: {}", event.status());
 
         notificationService.send(
-                event.category(),
-                "New task created"
+                event.notificationType(),
+                "Task created"
         );
     }
 }
