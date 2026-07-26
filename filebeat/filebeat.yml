@@ -1,0 +1,21 @@
+filebeat.inputs:
+  - type: filestream
+    id: task-manager
+    enabled: true
+
+    paths:
+      - /logs/task-manager/*.log
+
+  - type: filestream
+    id: notification
+
+    enabled: true
+
+    paths:
+      - /logs/notification/*.log
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+setup.kibana:
+  host: "kibana:5601"

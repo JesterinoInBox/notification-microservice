@@ -33,3 +33,7 @@ management:
     metrics:
       export:
         enabled: true
+
+logging:
+  file:
+    name: /var/log/notification/application.log
